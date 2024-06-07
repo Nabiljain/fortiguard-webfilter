@@ -1,3 +1,4 @@
-## FortiClient
+## FortiGuard
+Simple PS1 script to query the FortiGuard database and return the category of websites.
 
-Files and content may appear/update over time at random commits in this repo.
+Credit to https://github.com/SystemJargon for the original code
