@@ -77,10 +77,10 @@ Write-Host "Begining webfilter category scan from addresses.txt"
 #Write-Host "This may take some time depending on how many url or domains are to be scanned"
 
 foreach($url in $urls) {
-$web = Invoke-WebRequest https://www.fortiguard.com/webfilter?q=$url 
+$web = Invoke-WebRequest https://www.fortiguard.com/search?q=$url"&"engine=7
 # Write Output
 Add-Content -Value "$url" -Path $wfout1 
-$stringup = $web.tostring() -split "[`r`n]" | select-string ">Category: "
+$stringup = $web.tostring() -split "[`r`n]" | select-string "The address has been found as"
 Add-Content -Value $stringup -Path $wfout1 
 Add-Content -Value ------  -Path $wfout1 
 
